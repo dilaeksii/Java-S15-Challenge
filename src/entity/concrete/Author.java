@@ -25,6 +25,12 @@ public class Author extends AbstractPerson {
         this.books.add(book);
     }
 
+    public void removeBook(Book book) {
+        if (book == null)
+            throw new IllegalArgumentException("Book argument cannot be null");
+        this.books.remove(book);
+    }
+
     @Override
     public String toString() {
         return "Author " + getName() + " has written " + books;

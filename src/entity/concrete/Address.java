@@ -8,9 +8,9 @@ public class Address {
     private String street;
 
     public Address(String city, Integer postalCode, String street) {
-        this.city = city;
-        this.postalCode = postalCode;
-        this.street = street;
+        this.setCity(city);
+        this.setStreet(street);
+        this.setPostalCode(postalCode);
     }
 
     public String getCity() {
@@ -29,13 +29,17 @@ public class Address {
         this.city = city;
     }
 
-    public void setPostalCode(Integer postalCode) {
+    private void setPostalCode(Integer postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
     }
 
     @Override
     public String toString() {
-        return "City: " + city + "Street: " + street;
+        return " City: " + city + " Street: " + street + " Postal Code: " + postalCode;
     }
 
     @Override

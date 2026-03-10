@@ -12,11 +12,11 @@ public abstract class AbstractPerson {
     private String email;
 
     public AbstractPerson(Long id, String name, Address address, String phoneNumber, String email) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+        this.setId(id);
+        this.setName(name);
+        this.setAddress(address);
+        this.setPhoneNumber(phoneNumber);
+        this.setEmail(email);
     }
 
     public Long getId() {
@@ -37,6 +37,14 @@ public abstract class AbstractPerson {
 
     public String getEmail() {
         return email;
+    }
+
+    private void setId(Long id) {
+        if (id == null)
+            throw new IllegalArgumentException("id argument cannot be null");
+        if (id <= 0)
+            throw new IllegalArgumentException("id argument cannot be equal or less than zero");
+        this.id = id;
     }
 
     public void setName(String name) {

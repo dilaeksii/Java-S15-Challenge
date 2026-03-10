@@ -14,12 +14,6 @@ public class Library {
         return Collections.unmodifiableSet(readers);
     }
 
-    /*Yazılacak metotlar
-    * 1)addBok
-    * 2)addReader
-    * 3)removeReader
-    * 4)removeBook
-    * 5)showBook*/
 
 
 }

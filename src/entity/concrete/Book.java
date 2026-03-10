@@ -13,12 +13,12 @@ public class Book {
     private Category category;
 
     public Book(Long id, Author author, String name, Double price, String edition, Category category) {
-        this.id = id;
-        this.author = author;
-        this.name = name;
-        this.price = price;
-        this.edition = edition;
-        this.category = category;
+        this.setId(id);
+        this.setAuthor(author);
+        this.setName(name);
+        this.setPrice(price);
+        this.setEdition(edition);
+        this.setCategory(category);
     }
 
     public Long getId() {
@@ -43,6 +43,26 @@ public class Book {
 
     public Category getCategory() {
         return category;
+    }
+
+    private void setId(Long id) {
+        if (id == null)
+            throw new IllegalArgumentException("id argument cannot be null");
+        if (id <= 0)
+            throw new IllegalArgumentException("id cannot be equal or less than zero");
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        if (name == null)
+            throw new IllegalArgumentException("name argument cannot be null");
+        if (name.isEmpty())
+            throw new IllegalArgumentException("name argument cannot be empty");
+        this.name = name;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public void setPrice(Double price) {

@@ -5,11 +5,6 @@ public enum Category {
     NON_FICTION,
     SCIENCE,
     HISTORY,
-    BIOGRAPHY,
-    SELF_HELP,
-    FANTASY,
-    POLICY,
-    POLITICS,
-    ECONOMY,
-    MAGAZINE;
+    BIOGRAPHY;
+
 }

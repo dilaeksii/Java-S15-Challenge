@@ -7,6 +7,8 @@ public class Address {
     private Integer postalCode;
     private String street;
 
+    public  Address() {}
+
     public Address(String city, Integer postalCode, String street) {
         this.setCity(city);
         this.setStreet(street);

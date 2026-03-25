@@ -11,6 +11,11 @@ public abstract class AbstractPerson {
     private String phoneNumber;
     private String email;
 
+    public AbstractPerson(Long id, String name) {
+        this.setId(id);
+        this.setName(name);
+    }
+
     public AbstractPerson(Long id, String name, Address address, String phoneNumber, String email) {
         this.setId(id);
         this.setName(name);
@@ -74,13 +79,16 @@ public abstract class AbstractPerson {
             throw new IllegalArgumentException("Email number argument cannot be null");
         if (email.isEmpty())
             throw new IllegalArgumentException("Email number argument cannot be empty");
+        this.email = email;
     }
+
+    public abstract void whoYouAre();
 
     @Override
     public String toString() {
-        return "Name: " + name
-                + "Email: " + email
-                + "Phone Number: " +phoneNumber;
+        return "Name: " + name +
+                ", Email: " + email +
+                ", Phone Number: " + phoneNumber;
     }
 
     @Override

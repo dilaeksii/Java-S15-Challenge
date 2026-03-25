@@ -12,6 +12,17 @@ public class Book {
     private String edition;
     private Category category;
 
+    public Book(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Book(Long id, Author author, String name) {
+        this.id = id;
+        this.author = author;
+        this.name = name;
+    }
+
     public Book(Long id, Author author, String name, Double price, String edition, Category category) {
         this.setId(id);
         this.setAuthor(author);
@@ -69,7 +80,7 @@ public class Book {
         if (price == null)
             throw new IllegalArgumentException("Price argument cannot be null");
         if(price <= 0)
-            throw new IllegalArgumentException("Price argument cannot be less than zero.");
+            throw new IllegalArgumentException("Price argument must be greater than zero");
         this.price = price;
     }
 
@@ -81,15 +92,16 @@ public class Book {
 
     public void setCategory(Category category) {
         if (category == null)
-            throw new IllegalArgumentException("Caegory argument cannot be null");
+            throw new IllegalArgumentException("Category argument cannot be null");
         this.category = category;
     }
 
+
     @Override
     public String toString() {
-        return "Book Name: " + name
-                + " Author: " + author.getName()
-                + " Category: " + category;
+        return "Book Name: " + name +
+                ", Author: " + author.getName() +
+                ", Category: " + category;
     }
 
     @Override
